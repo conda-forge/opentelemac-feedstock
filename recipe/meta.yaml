@@ -35,8 +35,8 @@ requirements:
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ stdlib('c') }}
     - openmpi
-    - openmpi-mpifort
     - python
     - metis
     - numpy
@@ -46,14 +46,13 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - openmpi
-    - openmpi-mpifort
     - python
     - numpy
     - metis
     - matplotlib-base
     - scipy
     - mpi4py
-    - jupyter
+    - notebook
     - ipympl
 
 test:
