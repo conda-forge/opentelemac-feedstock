@@ -1,6 +1,6 @@
 {% set name = "opentelemac" %}
 {% set version = "v8p5r0" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 package:
   name: {{ name|lower }}
@@ -35,8 +35,8 @@ requirements:
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ stdlib('c') }}
     - openmpi
-    - openmpi-mpifort
     - python
     - metis
     - numpy
@@ -46,14 +46,13 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - openmpi
-    - openmpi-mpifort
     - python
     - numpy
     - metis
     - matplotlib-base
     - scipy
     - mpi4py
-    - jupyter
+    - notebook
     - ipympl
 
 test:
