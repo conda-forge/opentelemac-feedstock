@@ -52,8 +52,6 @@ requirements:
     - matplotlib-base
     - scipy
     - mpi4py
-    - notebook
-    - ipympl
 
 test:
   commands:
