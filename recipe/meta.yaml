@@ -1,6 +1,6 @@
 {% set name = "opentelemac" %}
 {% set version = "v8p5r0" %}
-{% set build = 3 %}
+{% set build = 4 %}
 
 package:
   name: {{ name|lower }}
@@ -50,7 +50,7 @@ requirements:
     - {{ compiler('cxx') }}
     - openmpi
     - python
-    - numpy
+    - numpy <2.0dev0
     - metis
     - matplotlib-base
     - scipy
