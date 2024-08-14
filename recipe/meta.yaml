@@ -1,6 +1,6 @@
 {% set name = "opentelemac" %}
 {% set version = "v8p5r0" %}
-{% set build = 2 %}
+{% set build = 3 %}
 
 package:
   name: {{ name|lower }}
@@ -21,7 +21,9 @@ build:
     - '*/libpthread.so.0'
     - '*/libm.so.6'
   ignore_run_exports:
-    - libstdcxx-ng
+    # don't ignore all run-exports from {{ compiler('cxx') }}, we need libgcc
+    - libstdcxx     # [linux]
+    - libstdcxx-ng  # [linux]
     - numpy
   rpaths:
     - opentelemac/builds/gnu.dynamic/lib
