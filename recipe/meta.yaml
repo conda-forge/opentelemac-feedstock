@@ -1,6 +1,6 @@
 {% set name = "opentelemac" %}
 {% set version = "v8p5r0" %}
-{% set build = 4 %}
+{% set build = 5 %}
 
 package:
   name: {{ name|lower }}
@@ -20,10 +20,11 @@ build:
     - '*/libc.so.6'
     - '*/libpthread.so.0'
     - '*/libm.so.6'
+  ignore_run_exports_from:
+    # we want to ignore libstdcxx, but not libgcc; the latter also comes in through
+    # compiler('c'), and conda keeps that despite ignoring the cxx run-exports
+    - {{ compiler('cxx') }}
   ignore_run_exports:
-    # don't ignore all run-exports from {{ compiler('cxx') }}, we need libgcc
-    - libstdcxx     # [linux]
-    - libstdcxx-ng  # [linux]
     - numpy
   rpaths:
     - opentelemac/builds/gnu.dynamic/lib
