@@ -45,6 +45,7 @@ requirements:
     - metis
     - numpy
     - sed
+    - setuptools <65  # [py<312]
   run:
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
@@ -56,6 +57,7 @@ requirements:
     - matplotlib-base
     - scipy
     - mpi4py
+    - setuptools <65  # [py<312]
 
 test:
   commands:
