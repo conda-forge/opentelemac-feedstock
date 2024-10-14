@@ -1,6 +1,6 @@
 {% set name = "opentelemac" %}
 {% set version = "v8p5r0" %}
-{% set build = 5 %}
+{% set build = 6 %}
 
 package:
   name: {{ name|lower }}
@@ -45,6 +45,7 @@ requirements:
     - metis
     - numpy
     - sed
+    - setuptools <65  # [py<312]
   run:
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
@@ -56,6 +57,7 @@ requirements:
     - matplotlib-base
     - scipy
     - mpi4py
+    - setuptools <65  # [py<312]
 
 test:
   commands:

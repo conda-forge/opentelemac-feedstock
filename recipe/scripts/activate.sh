@@ -32,7 +32,7 @@ fi
 export PATH=$HOMETEL/scripts/python3:$PATH
 export PYTHONPATH=$HOMETEL/scripts/python3:$PYTHONPATH
 export PYTHONPATH=$HOMETEL/builds/$USETELCFG/wrap_api/lib:$PYTHONPATH
-export LD_LIBRARY_PATH=$HOMETEL/builds/$USETELCFG/wrap_api/lib:$HOMETEL/builds/$USETELCFG/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$HOMETEL/builds/$USETELCFG/wrap_api/lib:$HOMETEL/builds/$USETELCFG/lib:$LD_LIBRARY_PATH:$CONDA_PREFIX/lib
 
 # telemac-debug() {
 #     if [[ "$1" == "on" ]]; then
