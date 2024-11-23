@@ -1,6 +1,6 @@
 {% set name = "opentelemac" %}
 {% set version = "v8p5r0" %}
-{% set build = 7 %}
+{% set build = 8 %}
 
 package:
   name: {{ name|lower }}
