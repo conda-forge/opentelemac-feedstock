@@ -2,24 +2,25 @@
 
 # TELEMAC home directory
 export HOMETEL=$SRC_DIR/opentelemac
-# Configuration file
-export SYSTELCFG=$HOMETEL/configs/systel.cfg
 
 # Configure PATH and PYTHONPATH
 export PATH=$HOMETEL/scripts/python3:$PATH
 export PYTHONPATH=$HOMETEL/scripts/python3
 
-rm -rf $HOMETEL/configs/*
 #linux
 if [[ $(uname) == Linux ]]; then
-   cp $RECIPE_DIR/configs/systel.linux.cfg $SYSTELCFG
+   # Configuration file
+   export SYSTELCFG=$HOMETEL/configs/systel.debian.cfg
+   export USETELCFG=gnu.shared
 #OSX
 elif [[ $(uname) == Darwin ]]; then
-   cp $RECIPE_DIR/configs/systel.macos.cfg $SYSTELCFG
+   # Configuration file
+   cp $RECIPE_DIR/configs/systel.macos.cfg $HOMETEL/configs/systel.macos.cfg
+   export SYSTELCFG=$HOMETEL/configs/systel.macos.cfg
    export USETELCFG=gfort-mpich
+   # Set TELEMAC version in systel.cfg
+   sed -i "/^modules:/a version:    $TELEMAC_VERSION" "$SYSTELCFG"
 fi
-# Set TELEMAC version in systel.cfg
-sed -i "/^modules:/a version:    $TELEMAC_VERSION" "$SYSTELCFG"
 
 # Name of the configuration to use
 export LD_LIBRARY_PATH=$HOMETEL/builds/$USETELCFG/wrap_api/lib:$HOMETEL/builds/$USETELCFG/lib
