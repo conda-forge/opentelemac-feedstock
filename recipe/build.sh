@@ -18,9 +18,9 @@ elif [[ $(uname) == Darwin ]]; then
    cp $RECIPE_DIR/configs/systel.macos.cfg $HOMETEL/configs/systel.macos.cfg
    export SYSTELCFG=$HOMETEL/configs/systel.macos.cfg
    export USETELCFG=gfort-mpich
+   # Set TELEMAC version in systel.cfg
+   sed -i "/^modules:/a version:    $TELEMAC_VERSION" "$SYSTELCFG"
 fi
-# Set TELEMAC version in systel.cfg
-sed -i "/^modules:/a version:    $TELEMAC_VERSION" "$SYSTELCFG"
 
 # Name of the configuration to use
 export LD_LIBRARY_PATH=$HOMETEL/builds/$USETELCFG/wrap_api/lib:$HOMETEL/builds/$USETELCFG/lib
