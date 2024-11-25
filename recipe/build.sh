@@ -31,10 +31,10 @@ mkdir -p $PREFIX/opentelemac/configs                     #1 Copy configs
 mkdir -p $PREFIX/opentelemac/builds                      #2 Copy builds
 mkdir -p $PREFIX/opentelemac/scripts                     #3 Copy scripts
 mkdir -p $PREFIX/opentelemac/sources                     #4 Copy sources
-cp -r $SYSTELCFG $PREFIX/opentelemac/configs             #1
-cp -r $HOMETEL/builds/* $PREFIX/opentelemac/builds       #2
-cp -r $HOMETEL/scripts/* $PREFIX/opentelemac/scripts     #3
-cp -r $HOMETEL/sources/* $PREFIX/opentelemac/sources     #4
+cp -v -r $SYSTELCFG $PREFIX/opentelemac/configs             #1
+cp -v -r $HOMETEL/builds/* $PREFIX/opentelemac/builds       #2
+cp -v -r $HOMETEL/scripts/* $PREFIX/opentelemac/scripts     #3
+cp -v -r $HOMETEL/sources/* $PREFIX/opentelemac/sources     #4
 
 # AUTO activate /deactivate environments variables for TELEMAC
 for CHANGE in "activate" "deactivate"
