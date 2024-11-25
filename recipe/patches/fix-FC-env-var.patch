@@ -2,7 +2,7 @@ diff --git a/scripts/python3/compilation/compil_tools.py b/scripts/python3/compi
 index 22727fc20..b5b28e754 100644
 --- a/scripts/python3/compilation/compil_tools.py
 +++ b/scripts/python3/compilation/compil_tools.py
-@@ -1012,7 +1012,7 @@ def compile_api_f2py(name, api_dir, source_list, skip_source, \
+@@ -1012,8 +1012,8 @@ def compile_api_f2py(name, api_dir, source_list, skip_source, \
                  'downgrade setuptools to version 73.0.'
              )
 
