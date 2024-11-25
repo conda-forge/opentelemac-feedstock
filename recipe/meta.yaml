@@ -10,6 +10,8 @@ source:
   - url: https://gitlab.pam-retd.fr/otm/telemac-mascaret/-/archive/{{ version }}/telemac-mascaret-{{ version }}.tar.gz
     folder: opentelemac
     sha256: b870fac5875d7be6978767e91e0b0237b7a9c5f001a0178d01d3ebbe42bcb335
+    patches:
+      - patches/fix-FC-env-var.patch
 
 build:
   number: {{ build }}
@@ -43,7 +45,7 @@ requirements:
     - python
     - meson
     - metis
-    - numpy
+    - numpy <2.0dev0
     - sed
     - setuptools <65  # [py<312]
   run:
