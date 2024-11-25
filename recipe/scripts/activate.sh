@@ -13,14 +13,14 @@ if [[ -z "${OLD_LD_LIBRARY_PATH}" ]]; then
 fi
 
 # Optional: Echo the variables to ensure they are correctly restored
-echo "Stored PATH: ${OLD_PATH}"
-echo "Stored PYTHONPATH: ${OLD_PYTHONPATH}"
-echo "Stored LD_LIBRARY_PATH: ${OLD_LD_LIBRARY_PATH}"
+# echo "Stored PATH: ${OLD_PATH}"
+# echo "Stored PYTHONPATH: ${OLD_PYTHONPATH}"
+# echo "Stored LD_LIBRARY_PATH: ${OLD_LD_LIBRARY_PATH}"
 # Configuration file
 if [[ $(uname) == Linux ]]; then
-   export SYSTELCFG=$HOMETEL/configs/systel.cfg
+   export SYSTELCFG=$HOMETEL/configs/systel.debian.cfg
    # Name of the configuration to use
-   export USETELCFG=gnu.dynamic
+   export USETELCFG=gnu.shared
 #OSX
 elif [[ $(uname) == Darwin ]]; then
    export SYSTELCFG=$HOMETEL/configs/systel.cfg
