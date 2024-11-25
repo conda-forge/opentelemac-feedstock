@@ -31,7 +31,8 @@ build:
   ignore_run_exports:
     - numpy
   rpaths:
-    - opentelemac/builds/gnu.dynamic/lib
+    # WARNING: All plateforms should share same config name!
+    - opentelemac/builds/gnu.shared/lib
 
 requirements:
   build:
