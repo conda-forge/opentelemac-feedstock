@@ -1,0 +1,37 @@
+diff --git a/configs/systel.debian.cfg b/configs/systel.debian.cfg
+index de4777ead..7bcf17f73 100644
+--- a/configs/systel.debian.cfg
++++ b/configs/systel.debian.cfg
+@@ -2,8 +2,7 @@
+ # ____/ TELEMAC Project Definitions /______________________________/
+ #
+ [Configurations]
+-configs:            gnu.shared gnu.shared.debug
+-                    gnu.static gnu.static.debug
++configs:            gnu.shared
+ # _____                       ______________________________________
+ # ____/ General declarations /_____________________________________/
+ #
+@@ -25,10 +24,10 @@ val_rank:           all
+ mods_all:           -I <config>
+ #
+ incs_all:           -I/usr/include -I/usr/local/include
+-libs_all:           -lmetis -lm -lmed -ldmumps -lmumps_common -lpord
++libs_all:           -lmetis -lm -lmed -ldmumps -lmumps_common -lpord -laed2 -lturbulence -lutil
+ #
+ cmd_obj:            mpif90 -c [obj_flags] <mods> <incs> <f95name>
+-cmd_obj_c:          gcc -c -fPIC <srcName> -o <objName>
++cmd_obj_c:          mpicc -c -fPIC <srcName> -o <objName>
+ cmd_exe:            mpif90 -fPIC [fflags_gfo] -o <exename> <objs> <libs>
+ #
+ cmd_doxygen:        doxygen
+@@ -42,7 +41,7 @@ pyd_fcompiler:      gnu95
+ #
+ # GFortran compilation flags
+ #
+-fflags_gfo:         -cpp -fconvert=big-endian -frecord-marker=4 -DHAVE_I16 -DHAVE_MPI -DHAVE_MED -DHAVE_MUMPS
++fflags_gfo:         -cpp -fconvert=big-endian -frecord-marker=4 -DHAVE_I16 -DHAVE_MPI -DHAVE_MED -DHAVE_MUMPS -DHAVE_AED2 -DHAVE_GOTM
+ fflags_debug_gfo:   -g -Wall -fcheck=all -fbacktrace -fbounds-check -finit-integer=-1 -finit-real=nan -ffpe-trap=invalid,zero,overflow
+ #
+ # _____                 ____________________________________________
+ 
