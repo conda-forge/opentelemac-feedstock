@@ -43,13 +43,13 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ stdlib('c') }}
+    - sed
+  host:
     - openmpi
     - meson
     - metis
-  host:
     - python
     - numpy <2.0dev0
-    - sed
     - setuptools <65  # [py<312]
   run:
     - {{ compiler('fortran') }}
