@@ -42,11 +42,11 @@ requirements:
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ stdlib('c') }}
     - openmpi
     - meson
     - metis
   host:
-    - {{ stdlib('c') }}
     - python
     - numpy <2.0dev0
     - sed
