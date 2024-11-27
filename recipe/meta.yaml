@@ -40,6 +40,7 @@ requirements:
     - python                                # [build_platform != target_platform]
     - numpy                                 # [build_platform != target_platform]
     - {{ compiler('fortran') }}
+    - gfortran
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ stdlib('c') }}
