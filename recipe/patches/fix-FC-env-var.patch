@@ -7,7 +7,7 @@ index 22727fc20..b5b28e754 100644
              )
 
 -        environ["FC"] = compiler
-+        environ["FC"] = fcompiler
++        # environ["FC"] = compiler
          cmd = f'{f2py_name} {quiet} -c {pyf_file} --backend meson '\
                f'{compile_cmd} -I{path.join(api_dir, "include")}'\
                f'{ld_flags} --build-dir {f2py_build_dir}'
