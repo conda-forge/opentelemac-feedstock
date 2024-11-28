@@ -13,7 +13,6 @@ source:
     patches:
       - patches/fix-FC-env-var.patch
       - patches/adapt-systel-debian-to-conda.patch  # [linux]
-      # - patches/fix-f2py-fortran-compiler.patch  # [py>311]
 
 build:
   number: {{ build }}
