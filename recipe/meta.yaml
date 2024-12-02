@@ -1,6 +1,6 @@
 {% set name = "opentelemac" %}
-{% set version = "v8p5r1" %}
-{% set build = 1 %}
+{% set version = "v9p0r0" %}
+{% set build = 0 %}
 
 package:
   name: {{ name|lower }}
@@ -9,16 +9,15 @@ package:
 source:
   - url: https://gitlab.pam-retd.fr/otm/telemac-mascaret/-/archive/{{ version }}/telemac-mascaret-{{ version }}.tar.gz
     folder: opentelemac
-    sha256: b870fac5875d7be6978767e91e0b0237b7a9c5f001a0178d01d3ebbe42bcb335
+    sha256: 3797b9573a78e610e99c89507446783905d10f450500cfedc64a46f9dd21e5f8
     patches:
-      - patches/fix-FC-env-var.patch
       - patches/adapt-systel-debian-to-conda.patch  # [linux]
 
 build:
   number: {{ build }}
   skip: true  # [not linux]
   script_env:
-    - TELEMAC_VERSION={{ version }}
+    - TELEMAC_VERSION={{ version }}  # [not linux]
   missing_dso_whitelist:
     - '*/libc.so.6'
     - '*/libpthread.so.0'
