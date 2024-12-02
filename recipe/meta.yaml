@@ -1,5 +1,5 @@
 {% set name = "opentelemac" %}
-{% set version = "v9p0r0" %}
+{% set version = "v9.0.0" %}
 {% set build = 0 %}
 
 package:
