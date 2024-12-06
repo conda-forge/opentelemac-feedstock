@@ -11,7 +11,7 @@ Summary: openTelemac
 
 Development: https://gitlab.pam-retd.fr/otm/telemac-mascaret/
 
-Documentation: http://wiki.opentelemac.org/doku.php?id=documentation_v8p5r1
+Documentation: http://wiki.opentelemac.org/doku.php?id=documentation_v9p0r0
 
 The TELEMAC-MASCARET system is an integrated suite of solvers for use in the
 field of free-surface flow.
