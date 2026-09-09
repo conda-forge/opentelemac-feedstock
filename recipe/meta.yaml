@@ -58,7 +58,7 @@ requirements:
 
 test:
   commands:
-    - config.py
+    - config.py  # [build_platform == target_platform]
 
 about:
   home: http://www.opentelemac.org/
