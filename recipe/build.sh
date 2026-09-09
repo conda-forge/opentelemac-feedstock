@@ -13,6 +13,7 @@ PYTHON_EXE=$(which python)
 NUMPY_INCLUDE=$(python -c "import numpy; print(numpy.get_include())")
 
 cmake -S "$HOMETEL" -B "$HOMETEL/build" -G "Unix Makefiles" \
+   ${CMAKE_ARGS} \
    -DCMAKE_BUILD_TYPE=Release \
    -DCMAKE_INSTALL_PREFIX="$PREFIX/opentelemac" \
    -DPython_EXECUTABLE="$PYTHON_EXE" \
