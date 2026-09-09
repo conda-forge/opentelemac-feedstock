@@ -12,15 +12,12 @@ export PYTHONPATH=$HOMETEL/scripts/python3
 PYTHON_EXE=$(which python)
 NUMPY_INCLUDE=$(python -c "import numpy; print(numpy.get_include())")
 
-# For cross-compiling with OpenMPI (e.g. osx-arm64 built on osx-64)
+# For cross-compiling with OpenMPI
 export OPAL_PREFIX=$PREFIX
 
-# When cross-compiling, tell cmake to use the MPI compiler wrappers directly
-# and skip try_run checks that fail on foreign architectures
-if [[ "${CONDA_BUILD_CROSS_COMPILATION:-0}" == "1" ]]; then
-    export CC=mpicc
-    export FC=mpif90
-fi
+# Use MPI compiler wrappers (following netcdf-fortran pattern)
+export CC=mpicc
+export FC=mpif90
 
 cmake -S "$HOMETEL" -B "$HOMETEL/build" -G "Unix Makefiles" \
    ${CMAKE_ARGS} \
