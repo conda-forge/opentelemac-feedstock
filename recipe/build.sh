@@ -12,7 +12,15 @@ export PYTHONPATH=$HOMETEL/scripts/python3
 PYTHON_EXE=$(which python)
 NUMPY_INCLUDE=$(python -c "import numpy; print(numpy.get_include())")
 
+# For cross-compiling with OpenMPI
+export OPAL_PREFIX=$PREFIX
+
+# Use MPI compiler wrappers (following netcdf-fortran pattern)
+export CC=mpicc
+export FC=mpif90
+
 cmake -S "$HOMETEL" -B "$HOMETEL/build" -G "Unix Makefiles" \
+   ${CMAKE_ARGS} \
    -DCMAKE_BUILD_TYPE=Release \
    -DCMAKE_INSTALL_PREFIX="$PREFIX/opentelemac" \
    -DPython_EXECUTABLE="$PYTHON_EXE" \
