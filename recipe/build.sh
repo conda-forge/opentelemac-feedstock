@@ -42,6 +42,11 @@ mkdir -p $PREFIX/opentelemac/scripts
 cp -r $HOMETEL/sources/* $PREFIX/opentelemac/sources
 cp -r $HOMETEL/scripts/* $PREFIX/opentelemac/scripts
 
+# Fail the build (incl. cross-compiled osx-arm64, where tests are skipped) if the layout expected by activate.sh is incomplete
+for f in bin/telemac2d scripts/python3/telemac2d.py systel.cfg; do
+   test -e "$PREFIX/opentelemac/$f" || { echo "missing $PREFIX/opentelemac/$f"; exit 1; }
+done
+
 # AUTO activate/deactivate environment variables for TELEMAC
 for CHANGE in "activate" "deactivate"; do
    mkdir -p "${PREFIX}/etc/conda/${CHANGE}.d"

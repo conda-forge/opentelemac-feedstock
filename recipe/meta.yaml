@@ -1,6 +1,6 @@
 {% set name = "opentelemac" %}
 {% set version = "v9.1.1" %}
-{% set build = 2 %}
+{% set build = 3 %}
 
 package:
   name: {{ name|lower }}
@@ -58,6 +58,9 @@ requirements:
 
 test:
   commands:
+    - test -f "${PREFIX}/opentelemac/scripts/python3/telemac2d.py"  # [unix]
+    - test -x "${PREFIX}/opentelemac/bin/telemac2d"  # [unix]
+    - test -f "${PREFIX}/opentelemac/systel.cfg"  # [unix]
     - config.py  # [build_platform == target_platform]
 
 about:
